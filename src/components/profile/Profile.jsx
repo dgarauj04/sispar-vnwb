@@ -1,3 +1,4 @@
+import styles from './Profile.module.scss'
 import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
@@ -8,9 +9,7 @@ export default function Profile() {
       <main className={styles.areaPerfil}>
         <section className={styles.perfilText}>
           <p>
-            Agradeço por dedicar seu tempo para conferir este projeto. E não se
-            preocupe, em breve irei criar meu próprio app de música e irei
-            compartilhar com vocês. Fique de olho!
+            Agradeço por dedicar seu tempo para conferir este projeto.E Agradeçoa a VaiNaWeb por proporcionar esta oportunidade de aprender com os grandes e melhores instrutores como a Kaka e o Samuca!!
           </p>
         </section>
 
@@ -22,7 +21,7 @@ export default function Profile() {
             <a
               href="https://instagram.com/dgaraujoo_"
               target="_blank"
-              className="linkButton insta"
+              className={styles.linkButtonInsta}
             >
               <FaInstagram />
               Instagram
@@ -30,7 +29,7 @@ export default function Profile() {
             <a
               href="https://linkedin.com/in/douglas-araujo-dgprogdev"
               target="_blank"
-              className="linkButton linke"
+              className={styles.linkButtonLinke}
             >
               <FaLinkedin />
               Linkedin
@@ -38,7 +37,7 @@ export default function Profile() {
             <a
               href="https://github.com/dgarauj04"
               target="_blank"
-              className="linkButton githu"
+              className={styles.linkButtonGithu}
             >
               <FaGithub />
               Github
