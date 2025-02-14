@@ -19,7 +19,7 @@ export default function AppRoutes() {
     <>
     <BrowserRouter>  
      <Routes>
-     <Route path="/login" element={<Login />} />
+     <Route path="/" element={<Login />} />
 
      <Route path="/refund" element={<PageWithSidebar Component={Refund} />} />
      <Route path="/request" element={<PageWithSidebar Component={Request} />} />
