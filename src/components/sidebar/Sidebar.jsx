@@ -22,11 +22,11 @@ export default function Sidebar() {
     navigate('/request');
   };
   const initLogout = () => {
-    navigate('/login');
+    navigate('/');
   };
 
   const goToProfilePage = () => {
-    navigate('/proile');
+    navigate('/profile');
   };
 
   return (
