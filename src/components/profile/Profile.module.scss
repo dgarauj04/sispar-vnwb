@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: linear-gradient(173deg, #0c7872, #2a3617d1, #092809);
   height: 100vh;
   @media (min-width: 770px) {
     height: 100vh;
@@ -17,7 +18,7 @@
   font-weight: 700;
   width: 80%;
   gap: 10px;
-  color: #ced5d2;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
@@ -26,7 +27,7 @@
   }
 }
 
-.PerfilSection{
+.perfilSection{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,8 +60,8 @@ figure{
   gap: 1rem;
 }
 
-.linkButton{
-  color: #d1cdc2;
+.linkButtonInsta, .linkButtonLinke, .linkButtonGithu {
+  color: #fff;
   padding: 1rem;
   position: relative;
   font-size: 20px;
@@ -72,9 +73,14 @@ figure{
   width: 20rem;
   display: inline-flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
+  z-index: 0;
+}
 
-  &::before {
+  .linkButtonInsta::before,
+   .linkButtonLinke::before,
+   .linkButtonGithu::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -84,15 +90,19 @@ figure{
     background-image: linear-gradient(45deg, #444343, #3e0c4ed9);
     border-radius: 0.8rem;
     opacity: 1;
-    transition: 0.3s linear;
+    transition: 0.6s linear;
     z-index: -1;
   }
 
-  &:hover::before {
+  .linkButtonInsta:hover::before,
+   .linkButtonLinke:hover::before,
+   .linkButtonGithu:hover::before {
     opacity: 0;
   }
 
-  &::after {
+  .linkButtonInsta::after,
+   .linkButtonLinke::after,
+   .linkButtonGithu::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -105,11 +115,13 @@ figure{
     z-index: -1;
   }
 
-  &:hover::after {
+  .linkButtonInsta:hover::after,
+   .linkButtonLinke:hover::after,
+   .linkButtonGithu:hover::after {
     opacity: 1;
   }
 
-  &.insta::after {
+  .linkButtonInsta::after {
     background-image: linear-gradient(
       44deg,
       #5e025e,
@@ -119,11 +131,10 @@ figure{
     );
   }
 
-  &.linke::after {
+  .linkButtonLinke::after {
     background-image: linear-gradient(46deg, #092268f7, #065870, #4081b9);
   }
 
-  &.githu::after {
+  .linkButtonGithu::after {
     background-image: linear-gradient(46deg, #420546, #720e8b, #081c66);
   }
-}
