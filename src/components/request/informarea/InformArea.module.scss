@@ -1,0 +1,59 @@
+.overflowXAuto {
+  overflow-y: auto;
+  width: 100%;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--border-select);
+  border-right: 1px solid var(--border-select);
+  border-left: 1px solid var(--border-select);
+  height: 66%;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+.table {
+  background-color: var(--border-select);
+  width: 100%;
+  border-radius: 5px;
+  border-spacing: 2px;
+}
+
+.headerRow {
+  background-color: var(--border-off);
+}
+
+tr {
+  background-color: var(--background-color);
+}
+
+.headerElement,
+.Element {
+  padding: 14px;
+  text-align: start;
+}
+
+.ElementButton,
+.ElementText {
+  text-align: center;
+}
+
+.deleteButton {
+  border-radius: 2px;
+  padding: 22px 12px;
+  background: transparent;
+  color: var(--fourth-color);
+  &:hover {
+    background-color: var(--error-color);
+    color: var(--background-color); /* hover:text-red-800 */
+  }
+}
+
+.iconDelete {
+  font-size: 22px;
+}
+
+.iconText {
+  color: var(--fourth-color);
+  transform: rotate(180deg) scaleX(-1);
+  font-size: 24px;
+}

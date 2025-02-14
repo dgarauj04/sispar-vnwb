@@ -1,0 +1,158 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  margin-left: 5rem;
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.navarea {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--fourth-color);
+  gap: 5px;
+}
+
+.linkIcon {
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.link,
+.linkIcon {
+  text-decoration: none;
+  color: var(--border-color);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.refoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  width: 100%;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+
+  .card {
+    width: 290px;
+    height: 209px;
+    border-radius: 6px;
+    border: 0.8px solid var(--border-select);
+    padding: 64px 32px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--border-off);
+      border-right: 3px solid var(--border-select);
+      border-bottom: 3px solid var(--border-select);
+    }
+
+    .cardIcon {
+      font-size: 32px;
+      width: 36px;
+      height: 40px;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 21px;
+      color: var(--text-color);
+    }
+  }
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+  border-radius: 6px;
+  border: 0.8px solid #cbd4e1;
+  padding: 20px 30px;
+
+  .infoItem {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 5vh;
+    justify-content: space-evenly;
+    color: var(--text-color);
+    font-size: 16px;
+    .infoIcon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      text-align: center;
+      margin-right: 8px;
+      padding: 6px;
+      color: var(--border-off);
+    }
+
+    .iconSolic {
+      background-color: var(--second-color);
+    }
+
+    .iconAnalit {
+      background-color: var(--analise-color);
+    }
+
+    .iconAprove {
+      background-color: var(--sucess-color);
+    }
+
+    .iconReject {
+      background-color: var(--error-color);
+    }
+  }
+}
+
+.updateText {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 16px;
+  color: var(--third-color);
+  gap: 10px;
+}
