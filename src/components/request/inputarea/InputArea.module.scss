@@ -36,8 +36,9 @@
 .areaForm {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border: none;
-  gap: 16px;
+  height: 25vh;
 }
 
 .firstInputs {
@@ -54,14 +55,15 @@
   align-items: center;
   flex-direction: row;
   width: 100%;
-  gap: 16px;
+  height: 11vh;
+  gap: 9px;
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   height: 74px;
-  gap: 10px;
   flex-grow: 1;
   label {
     font-weight: 700;
