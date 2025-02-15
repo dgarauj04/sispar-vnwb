@@ -6,6 +6,7 @@ import { IoMdMenu, IoIosLogOut } from 'react-icons/io';
 import { GoHome } from 'react-icons/go';
 import { HiOutlineDocumentCurrencyDollar } from 'react-icons/hi2';
 import { LuHistory } from 'react-icons/lu';
+import imgProfile from "../../assets/image.png"
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
@@ -13,6 +14,10 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const goToProfilePage = () => {
+    navigate('/profile');
   };
 
   const goToRefundPage = () => {
@@ -23,10 +28,6 @@ export default function Sidebar() {
   };
   const initLogout = () => {
     navigate('/');
-  };
-
-  const goToProfilePage = () => {
-    navigate('/profile');
   };
 
   return (
@@ -43,7 +44,7 @@ export default function Sidebar() {
 
       <div className={styles.perfil}>
         <img
-          src="http://github.com/dgarauj04.png"
+          src={imgProfile}
           alt="Profile"
           className={styles.profileImg}
         />
