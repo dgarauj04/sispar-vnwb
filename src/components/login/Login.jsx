@@ -25,7 +25,8 @@ export default function Login() {
           <h1>Boas vindas ao Novo Portal SISPAR</h1>
           <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
-          <form>
+           <form className={styles.formLogin}>
+          <fieldset className={styles.fieldsetLogin}>
             <input
               type="email"
               placeholder="Email"
@@ -38,6 +39,7 @@ export default function Login() {
               className={styles.inputLogin}
               required
             />
+             </fieldset>
             <a href="#" className={styles.esqueci}>
               Esqueci minha senha
             </a>
