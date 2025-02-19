@@ -1,33 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './components/login/Login';
-import Refund from './components/refund/Refund';
-import Request from './components/request/Request';
-import Sidebar from './components/sidebar/Sidebar';
 import Profile from './components/profile/Profile';
+import PageRequest from './pages/pageRequest/PageRequest';
+import PageRefund from './pages/pageRefund/PageRefund';
 
 export default function AppRoutes() {
-   const PageWithSidebar = ({ Component }) => (
-    <div className="app-container">
-      <Sidebar />
-      <main className="content">
-        <Component />
-      </main>
-    </div>
-  ); 
-
   return (
     <>
-    <BrowserRouter>  
-     <Routes>
-     <Route path="/" element={<Login />} />
-
-     <Route path="/refund" element={<PageWithSidebar Component={Refund} />} />
-     <Route path="/request" element={<PageWithSidebar Component={Request} />} />
-
-     <Route path="/profile" element={<PageWithSidebar Component={Profile} />} />
-     </Routes>
-    </BrowserRouter>
-    
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+            <Route path="/refund" element={<PageRefund />} />
+            <Route path="/request" element={<PageRequest />} />
+            <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
