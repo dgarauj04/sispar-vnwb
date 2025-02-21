@@ -1,29 +1,24 @@
-.container {
-  background-color: transparent;
-  width: 100%;
+.formContainer {
   display: flex;
-  flex-direction: column;
-}
-
-.form {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-direction: row;
-  gap: 0;
-  flex-grow: 1;
+  align-items: center;
   width: 100%;
+  height: 25vh;
   input,
   select {
-    height: 45px;
-    padding: 12px 13px;
-    font-size: 14px;
+    width: 100%;
+    height: 6vh;
+    border-radius: 6px;
+    border-width: 0.8px;
+    padding: 5px;
+    font-size: 15px;
+    color: var(--text-color);
     border: 1px solid #d1d5db;
     &:hover {
       border: 0.8px solid var(--first-color);
     }
     &:focus {
-      box-shadow: 0px 0px 2px 4px var(--border-select);
+      box-shadow: 0px 0px 2px 3px var(--border-select);
     }
     &:focus-visible {
       outline: none;
@@ -33,73 +28,69 @@
   }
 }
 
-.areaForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: none;
-  height: 25vh;
+label {
+  font-weight: 700;
+  font-size: 14px;
+  color: #374151;
 }
 
 .firstInputs {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-  gap: 16px;
-}
-
-.secondInputs {
-  display: flex;
   align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: 11vh;
-  gap: 9px;
-}
-
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 74px;
-  flex-grow: 1;
-  label {
-    font-weight: 700;
-    font-size: 15px;
-    color: #374151;
-    margin-bottom: 4px;
-  }
+  flex-wrap: wrap;
+  width: 33%;
+  height: 22vh;
 }
 
 .inputName {
-  max-width: 300px;
-  border-radius: 6px;
-  border-width: 0.8px;
+  width: 45%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.inputEmpresa,
-.inputConta {
-  max-width: 123px;
-  border-radius: 6px;
-  border-width: 0.8px;
-  padding: 13px 12px;
+.inputEmpresa {
+  width: 24%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.inputPrestacao {
+  width: 27%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .inputDescricao {
   width: 100%;
-  max-width: 540px;
-  border-radius: 6px;
-  border-width: 0.8px;
-  padding: 13px 12px;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .separatorLine {
-  width: 2px;
-  height: 165px;
+  width: 0.1vw;
+  height: 23vh;
   background-color: var(--border-select);
-  margin: 15px;
+}
+
+.secondInputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 65%;
+  height: 23vh;
 }
 
 .inputWrapper {
@@ -112,8 +103,9 @@
 .inputIconControle {
   position: absolute;
   background: var(--first-color);
+  right: 0;
   width: 48px;
-  height: 45px;
+  height: 6vh;
   text-align: center;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6.06px;
@@ -124,71 +116,65 @@
   pointer-events: none;
 }
 
-.inputIcon {
-  right: 8px;
-}
-
-.inputIconDespesa {
-  right: 7px;
-}
-
-.inputIconControle {
-  right: 10px;
-}
-
-.inputData {
-  width: 100%;
-  max-width: 175px;
-  border-width: 0.8px;
-  padding: 12px 13px;
-  border-radius: 6px;
-  text-transform: uppercase;
+.inputDate {
+  width: 20%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
+  input[type='date'] {
+    text-transform: uppercase;
+  }
 }
 
 .selectDespesa {
-  width: 100%;
-  max-width: 245px;
-  height: 45px;
-  border-radius: 6px;
-  padding: 12px;
-  border-width: 0.8px;
+  width: 25%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .selectControl {
-  max-width: 471px;
-  height: 45px;
-  padding: 12px;
-  border-radius: 6px;
-  border-width: 0.8px;
+  width: 50%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .inputOrd,
 .inputPep,
 .inputDiv,
 .inputMoeda {
-  width: 100%;
-  max-width: 72px;
-  border-radius: 6px;
-  border-width: 0.8px;
-  padding: 13px 12px;
+  width: 8%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .inputDist,
 .inputValorKm,
 .inputTaxa,
 .inputFaturado {
-  width: 100%;
-  max-width: 120px;
-  border-radius: 6px;
-  border-width: 0.8px;
-  padding: 13px 12px;
+  width: 11%;
+  height: 9vh;
+  display: flex;
+  align-items: initial;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .buttonContainer {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 33px;
-  gap: 8px;
+  justify-content: space-evenly;
+  margin-top: 14px;
+  width: 18%;
 }
 
 .iconButton {
@@ -200,11 +186,11 @@
   align-items: center;
   background-color: #1e3a8a;
   color: #ffffff;
-  margin-left: 8px;
-  gap: 8px;
+  justify-content: space-evenly;
+  width: 55%;
+  height: 6vh;
   border-radius: 6px;
-  padding: 12px 14px;
-
+  font-size: 16px;
   &:hover {
     background-color: #1a2e66;
   }
@@ -212,8 +198,10 @@
 
 .buttonClean {
   background-color: var(--second-color);
-  width: 48px;
+  width: 30%;
+  height: 6vh;
   border-radius: 6px;
+  font-size: 16px;
   color: #fff;
   &:hover {
     background-color: #0e8074;
