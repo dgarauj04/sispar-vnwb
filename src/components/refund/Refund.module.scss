@@ -18,9 +18,10 @@
 .navarea {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 9%;
   font-size: 0.875rem;
   color: var(--fourth-color);
-  gap: 5px;
 }
 
 .linkIcon {
@@ -42,35 +43,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px;
   width: 100%;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 78%;
+  height: 70vh;
 }
 
 .title {
   font-weight: 700;
-  font-size: 32px;
-  margin-bottom: 16px;
+  font-size: 2rem;
   text-align: left;
 }
 
 .subtitle {
   font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 32px;
+  font-size: 1rem;
 }
 
 .cardsContainer {
   display: flex;
-  justify-content: center;
-  gap: 32px;
-  margin-bottom: 32px;
+  align-items: center;
+  justify-content: space-between;
 
   .card {
-    width: 290px;
-    height: 209px;
+    width: 30%;
+    height: 33vh;
     border-radius: 6px;
     border: 0.8px solid var(--border-select);
-    padding: 64px 32px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -86,14 +90,14 @@
 
     .cardIcon {
       font-size: 32px;
-      width: 36px;
-      height: 40px;
+      width: 30%;
+      height: 7vh;
       margin-bottom: 16px;
       color: var(--text-color);
     }
     h2 {
       font-weight: 700;
-      font-size: 21px;
+      font-size: 1.3rem;
       color: var(--text-color);
     }
   }
@@ -107,7 +111,7 @@
   height: 20%;
   border-radius: 6px;
   border: 0.8px solid #cbd4e1;
-  padding: 20px 30px;
+  padding: 20px;
 
   .infoItem {
     display: flex;
@@ -118,8 +122,8 @@
     color: var(--text-color);
     font-size: 16px;
     .infoIcon {
-      width: 36px;
-      height: 36px;
+      width: 25%;
+      height: 6vh;
       border-radius: 6px;
       text-align: center;
       margin-right: 8px;
@@ -148,10 +152,10 @@
 .updateText {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 17%;
   flex-direction: row;
   font-weight: 400;
-  font-size: 16px;
-  margin-top: 16px;
+  font-size: 1rem;
   color: var(--third-color);
-  gap: 10px;
 }
