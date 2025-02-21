@@ -1,16 +1,29 @@
-import styles from './Profile.module.scss'
-import { FaInstagram } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
+import styles from './Profile.module.scss';
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { IoIosLogOut } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
+  const navigate = useNavigate();
+  const initLogout = () => {
+    navigate('/');
+  };
+
   return (
     <>
       <main className={styles.areaPerfil}>
+        <section className={styles.btnLogoutProfile}>
+          <button className={styles.logoutBtnProfile} onClick={initLogout}>
+            <IoIosLogOut />
+          </button>
+        </section>
+
         <section className={styles.perfilText}>
-          <p>
-            Agradeço por dedicar seu tempo para conferir este projeto.E Agradeçoa a VaiNaWeb por proporcionar esta oportunidade de aprender com os grandes e melhores instrutores como a Kaka e o Samuca!!
-          </p>
+          <h1>
+            Agradeço por dedicar seu tempo para conferir este projeto, e
+            agradeço a VaiNaWeb por proporcionar esta oportunidade de aprender
+            com os grandes e melhores instrutores como a Kaka e o Samuca!!
+          </h1>
         </section>
 
         <section className={styles.perfilSection}>
