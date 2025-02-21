@@ -2,21 +2,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 2px 5px 5px 2px;
+  overflow: hidden;
+  width: 100%;
   height: 100vh;
-  padding: 7px;
-  margin-left: 5rem;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .headerNav {
-display: flex;
-align-items: center;
-justify-content: flex-start;
-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .navarea {
@@ -32,7 +34,8 @@ width: 100%;
   margin-top: 4px;
 }
 
-.link, .linkIcon {
+.link,
+.linkIcon {
   text-decoration: none;
   color: var(--border-color);
   &:hover {
@@ -45,13 +48,14 @@ width: 100%;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  gap: 30px;
+  height: 12vh;
 }
 
-.flexInput {
+.inputFooter {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  width: 60%;
 }
 
 .labelTotal {
@@ -63,45 +67,46 @@ width: 100%;
 }
 
 .inputTotal {
-  width: 113px;
-  height: 45px;
-  border-radius: 6px;
-  border-width: 0.8px;
-  padding: 12px 13px;
-  font-size: 14px;
-  border: 1px solid #d1d5db;
-  &:hover {
-    border: 0.8px solid var(--first-color);
-  }
-  &:focus {
-    box-shadow: 0px 0px 2px 4px var(--border-select);
-  }
-  &:focus-visible {
-    outline: none;
-    border-color: var(--text-color);
+  width: 20%;
+  input {
+    width: 100%;
+    height: 6vh;
+    border-radius: 6px;
     border-width: 0.8px;
+    padding: 12px 13px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    &:hover {
+      border: 0.8px solid var(--first-color);
+    }
+    &:focus {
+      box-shadow: 0px 0px 2px 4px var(--border-select);
+    }
+    &:focus-visible {
+      outline: none;
+      border-color: var(--text-color);
+      border-width: 0.8px;
+    }
   }
 }
 
-.flexButton {
+.areabtn {
+  width: 55%;
   display: flex;
-  align-items: center;
-  margin-top: 15px;
-  gap: 10px;
+  justify-content: space-between;
+  margin-top: 1.5rem;
 }
 
 .sendButton,
 .cancelButton {
   display: flex;
   align-items: center;
-  width: 215px;
-  height: 50px;
+  justify-content: space-evenly;
+  width: 47%;
+  height: 6.5vh;
   border-radius: 6px;
-  gap: 10px;
-  padding: 20px 12px;
   font-size: 16px;
-  font-weight: 700;
-  margin-top: 6px;
+  font-weight: 500;
   color: #fff;
 }
 
