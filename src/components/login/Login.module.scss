@@ -29,7 +29,7 @@ main {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
-    width: 75%;
+    width: 80%;
   }
 
   p {
@@ -103,13 +103,13 @@ input.error {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 75%;
+  width: 65%;
   height: 10vh;
 }
 
-button[type='button'] {
-  width: 10.5em;
-  height: 3.5em;
+.btnEntrar, .btnCreate {
+  width: 45%;
+  height: 7vh;
   border: none;
   border-radius: 6px;
   cursor: pointer;
