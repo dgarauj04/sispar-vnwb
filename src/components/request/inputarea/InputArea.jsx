@@ -101,11 +101,9 @@ export default function InputArea({ onAddReembolso }) {
 
   return (
     <>
-      <section className={styles.container}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <fieldset className={styles.areaForm}>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
             <div className={styles.firstInputs}>
-              <div className={styles.inputGroup}>
+              <div className={styles.inputName}>
                 <label htmlFor="nome" className={styles.label}>
                   Nome Completo
                 </label>
@@ -115,11 +113,10 @@ export default function InputArea({ onAddReembolso }) {
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
-                  className={styles.inputName}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputEmpresa}>
                 <label htmlFor="empresa" className={styles.label}>
                   Empresa
                 </label>
@@ -129,13 +126,12 @@ export default function InputArea({ onAddReembolso }) {
                   name="empresa"
                   value={formData.empresa}
                   onChange={handleChange}
-                  className={styles.inputEmpresa}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputPrestacao}>
                 <label htmlFor="prestacaoContas" className={styles.label}>
-                  N° Prest. Contas
+                  N° Prest.Contas
                 </label>
                 <input
                   type="text"
@@ -143,13 +139,10 @@ export default function InputArea({ onAddReembolso }) {
                   name="prestacaoContas"
                   value={formData.prestacaoContas}
                   onChange={handleChange}
-                  className={styles.inputConta}
                 />
               </div>
-            </div>
-
-            <div className={styles.secondInputs}>
-              <div className={styles.inputGroup}>
+            
+              <div className={styles.inputDescricao}>
                 <label htmlFor="descricao" className={styles.label}>
                   Descrição / Motivo do Reembolso
                 </label>
@@ -159,17 +152,14 @@ export default function InputArea({ onAddReembolso }) {
                   name="descricao"
                   value={formData.descricao}
                   onChange={handleChange}
-                  className={styles.inputDescricao}
                 ></input>
               </div>
             </div>
-          </fieldset>
 
-          <div className={styles.separatorLine}></div>
+        <div className={styles.separatorLine}></div>
 
-          <fieldset className={styles.areaForm}>
-            <div className={styles.firstInputs}>
-              <div className={styles.inputGroup}>
+            <div className={styles.secondInputs}>
+              <div className={styles.inputDate}>
                 <label htmlFor="data" className={styles.label}>
                   Data
                 </label>
@@ -180,7 +170,6 @@ export default function InputArea({ onAddReembolso }) {
                     name="data"
                     value={formData.data}
                     onChange={handleChange}
-                    className={styles.inputData}
                   />
                   <div className={styles.inputIcon}>
                     <FaCalendarAlt style={{ marginBottom: '10px' }} />
@@ -188,7 +177,7 @@ export default function InputArea({ onAddReembolso }) {
                 </div>
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.selectDespesa}>
                 <label htmlFor="tipoDespesa" className={styles.label}>
                   Tipo de Despesa
                 </label>
@@ -198,7 +187,6 @@ export default function InputArea({ onAddReembolso }) {
                     name="tipoDespesa"
                     value={formData.tipoDespesa}
                     onChange={handleChange}
-                    className={styles.selectDespesa}
                   >
                     <option value="" disabled selected>
                       Selecionar
@@ -221,7 +209,7 @@ export default function InputArea({ onAddReembolso }) {
                 </div>
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.selectControl}>
                 <label htmlFor="controleCusto" className={styles.label}>
                   Controle de Custo
                 </label>
@@ -231,7 +219,6 @@ export default function InputArea({ onAddReembolso }) {
                     name="controleCusto"
                     value={formData.controleCusto}
                     onChange={handleChange}
-                    className={styles.selectControl}
                   >
                     <option value="" disabled selected>
                       Selecionar
@@ -251,43 +238,39 @@ export default function InputArea({ onAddReembolso }) {
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.secondInputs}>
-              <div className={styles.inputGroup}>
+              <div className={styles.inputOrd}>
                 <label htmlFor="ordInt" className={styles.label}>
                   Ord. Int.
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="ordInt"
                   name="ordInt"
                   value={formData.ordInt}
                   onChange={handleChange}
-                  className={styles.inputOrd}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputPep}>
                 <label htmlFor="pep" className={styles.label}>
                   PEP
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="pep"
                   name="pep"
                   value={formData.pep}
                   onChange={handleChange}
-                  className={styles.inputPep}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputDiv}>
                 <label htmlFor="div" className={styles.label}>
                   Div.
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="div"
                   name="div"
                   value={formData.div}
@@ -296,7 +279,7 @@ export default function InputArea({ onAddReembolso }) {
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputDist}>
                 <label htmlFor="distKm" className={styles.label}>
                   Dist. / Km
                 </label>
@@ -306,11 +289,10 @@ export default function InputArea({ onAddReembolso }) {
                   name="distKm"
                   value={formData.distKm}
                   onChange={handleChange}
-                  className={styles.inputDist}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputMoeda}>
                 <label htmlFor="moeda" className={styles.label}>
                   Moeda
                 </label>
@@ -320,49 +302,45 @@ export default function InputArea({ onAddReembolso }) {
                   name="moeda"
                   value={formData.moeda}
                   onChange={handleChange}
-                  className={styles.inputMoeda}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputValorKm}>
                 <label htmlFor="valorKm" className={styles.label}>
                   Valor / Km
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="valorKm"
                   name="valorKm"
                   value={formData.valorKm}
                   onChange={handleChange}
-                  className={styles.inputValorKm}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputTaxa}>
                 <label htmlFor="valTaxa" className={styles.label}>
                   Val. Taxa
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="valTaxa"
                   name="valTaxa"
                   value={formData.valTaxa}
                   onChange={handleChange}
-                  className={styles.inputTaxa}
                 />
               </div>
 
-              <div className={styles.inputGroup}>
+              <div className={styles.inputFaturado}>
                 <label htmlFor="valFaturado" className={styles.label}>
                   Val. Faturado
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="valFaturado"
                   name="valFaturado"
                   value={formData.valFaturado}
                   onChange={handleChange}
-                  className={styles.inputFaturado}
                 />
               </div>
 
@@ -380,9 +358,8 @@ export default function InputArea({ onAddReembolso }) {
                 </button>
               </div>
             </div>
-          </fieldset>
+          
         </form>
-      </section>
 
       {showResetMessage && (
         <MessageForm
