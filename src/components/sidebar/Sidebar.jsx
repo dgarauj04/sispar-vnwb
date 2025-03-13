@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
-import { MdMenuOpen } from 'react-icons/md';
+import { MdMenuOpen, MdContentPasteSearch } from 'react-icons/md';
 import { IoMdMenu, IoIosLogOut } from 'react-icons/io';
 import { GoHome } from 'react-icons/go';
 import { HiOutlineDocumentCurrencyDollar } from 'react-icons/hi2';
