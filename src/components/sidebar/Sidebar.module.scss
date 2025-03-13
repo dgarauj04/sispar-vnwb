@@ -4,15 +4,15 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  position: fixed;
   height: 100vh;
-  padding: 2px 10px;
-  width: 7%;
-  transition: 0.8s ease;
+  padding: 0 8px;
+  width: 5%;
+  transition: 1.2s all ease;
 
   &:hover {
-    width: 14%;
+    width: 13%;
     background: var(--background-color);
-    position: absolute;
     box-shadow: 2px 0px 10px 1px #c9c5c5;
   }
 
@@ -20,26 +20,27 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    transition: 0.2s ease;
     width: 100%;
     h2 {
       color: var(--text-color);
       font-size: 16px;
+      opacity: 0;
+      width: 120px;
+      transition: opacity 0.8s ease;
     }
     p {
       font-size: 14px;
       color: var(--third-color);
-    }
-    h2,
-    p {
-      display: none;
+      opacity: 0;
+      width: 120px;
+      transition: opacity 0.8s ease;
     }
   }
 
   &:hover .perfil {
     h2,
     p {
-      display: block;
+      opacity: 1;
     }
   }
 
@@ -68,9 +69,10 @@
     width: 100%;
 
     .nameOption {
-      display: none;
+      opacity: 0;
       font-size: 16px;
       color: var(--text-color);
+      transition: opacity 0.4s ease;
     }
 
     .icon {
@@ -89,9 +91,9 @@
     }
   }
 
-  &:hover .buttonOption .nameOption,
+ &:hover .buttonOption .nameOption, 
   &:hover .logoutBtn .nameOption {
-    display: block;
+    opacity: 1;
   }
 
   .logoutBtn {
