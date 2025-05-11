@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './InputArea.module.scss';
 import { FaCalendarAlt, FaChevronDown } from 'react-icons/fa';
 import { FiPlus, FiDelete } from 'react-icons/fi';
 import MessageForm from './messageForm/MessageForm';
 
 export default function InputArea({ onAddReembolso }) {
+ 
   const [formData, setFormData] = useState({
     nome: '',
     empresa: '',
@@ -25,13 +27,18 @@ export default function InputArea({ onAddReembolso }) {
 
   const [showResetMessage, setShowResetMessage] = useState(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+   InputArea.propTypes = {
+  onAddReembolso: PropTypes.func.isRequired,
+};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const novoReembolso = {
       id: Date.now(),
       colaborador: formData.nome,
@@ -73,7 +80,6 @@ export default function InputArea({ onAddReembolso }) {
   const handleReset = () => {
     setShowResetMessage(true);
   };
-
   const handleConfirmReset = () => {
     setFormData({
       nome: '',
@@ -134,7 +140,7 @@ export default function InputArea({ onAddReembolso }) {
                   N° Prest.Contas
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="prestacaoContas"
                   name="prestacaoContas"
                   value={formData.prestacaoContas}
@@ -188,7 +194,7 @@ export default function InputArea({ onAddReembolso }) {
                     value={formData.tipoDespesa}
                     onChange={handleChange}
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled>
                       Selecionar
                     </option>
                     <option value="alimentacao">Alimentação</option>
@@ -220,7 +226,7 @@ export default function InputArea({ onAddReembolso }) {
                     value={formData.controleCusto}
                     onChange={handleChange}
                   >
-                    <option value="" disabled selected>
+                    <option value="" disabled>
                       Selecionar
                     </option>
                     <option value="1100109002">
@@ -247,6 +253,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="ordInt"
                   name="ordInt"
+                  placeholder='0000'
                   value={formData.ordInt}
                   onChange={handleChange}
                 />
@@ -260,6 +267,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="pep"
                   name="pep"
+                  placeholder='000'
                   value={formData.pep}
                   onChange={handleChange}
                 />
@@ -273,6 +281,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="div"
                   name="div"
+                  placeholder='000'
                   value={formData.div}
                   onChange={handleChange}
                   className={styles.inputDiv}
@@ -284,11 +293,12 @@ export default function InputArea({ onAddReembolso }) {
                   Dist. / Km
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="distKm"
                   name="distKm"
                   value={formData.distKm}
                   onChange={handleChange}
+                  placeholder="0Km"
                 />
               </div>
 
@@ -302,6 +312,7 @@ export default function InputArea({ onAddReembolso }) {
                   name="moeda"
                   value={formData.moeda}
                   onChange={handleChange}
+                  placeholder='BRL'
                 />
               </div>
 
@@ -313,6 +324,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="valorKm"
                   name="valorKm"
+                  placeholder='$0.00'
                   value={formData.valorKm}
                   onChange={handleChange}
                 />
@@ -326,6 +338,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="valTaxa"
                   name="valTaxa"
+                  placeholder='0.0%'
                   value={formData.valTaxa}
                   onChange={handleChange}
                 />
@@ -339,13 +352,17 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="valFaturado"
                   name="valFaturado"
+                  placeholder='$0.00'
                   value={formData.valFaturado}
                   onChange={handleChange}
                 />
               </div>
 
               <div className={styles.buttonContainer}>
-                <button type="submit" className={styles.buttonSave}>
+                <button 
+                type="submit" 
+                className={styles.buttonSave}
+                >
                   <FiPlus className={styles.iconButton} /> Salvar
                 </button>
 

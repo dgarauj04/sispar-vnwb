@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './Request.module.scss';
 import InputArea from './inputarea/InputArea';
 import InformArea from './informarea/InformArea';
 import { GoHome } from 'react-icons/go';
 import { MdCheck, MdClose } from 'react-icons/md';
-import {
-  getReembolsos,
-  addReembolso,
-  removeReembolso,
-} from '../../../api-data/api';
 import MessageCancel from './messageCancel/MessageCancel';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +13,8 @@ export default function Request() {
   const [reembolsoToDelete, setReembolsoToDelete] = useState(null);
   const [showCancelMessage, setShowCancelMessage] = useState(false);
 
-  useEffect(() => {
-    setReembolsos(getReembolsos());
-  }, []);
 
   const handleAddReembolso = (novoReembolso) => {
-    addReembolso(novoReembolso);
     setReembolsos([...reembolsos, novoReembolso]);
   };
 
@@ -33,7 +24,6 @@ export default function Request() {
   };
 
   const clickConfirmDelete = () => {
-    removeReembolso(reembolsoToDelete);
     setReembolsos(reembolsos.filter((item) => item.id !== reembolsoToDelete));
     setDeleteMessage(false);
   };

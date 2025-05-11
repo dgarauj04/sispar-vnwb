@@ -158,6 +158,10 @@ label {
   flex-direction: column;
 }
 
+.inputMoeda > input {
+  text-transform: uppercase;
+}
+
 .inputDist,
 .inputValorKm,
 .inputTaxa,

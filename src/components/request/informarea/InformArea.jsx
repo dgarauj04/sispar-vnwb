@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './InformArea.module.scss';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { BiSolidFile } from 'react-icons/bi';
 import MessageDelete from './messageDelete/MessageDelete';
 
-export default function InformArea({ reembolsos, onRemoveReembolso, deleteMessage, onConfirm, onCancel }) {
+export default function InformArea({ 
+  reembolsos, 
+  onRemoveReembolso, 
+  deleteMessage, 
+  onConfirm, 
+  onCancel 
+}) {
+ InformArea.propTypes = {
+  reembolsos: PropTypes.array.isRequired,
+  onRemoveReembolso: PropTypes.func.isRequired,
+  deleteMessage: PropTypes.bool.isRequired,
+  onConfirm: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+}; 
+
   const deleteClick = (id) => {
     onRemoveReembolso(id);
   };

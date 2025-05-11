@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 import { MdMenuOpen, MdContentPasteSearch } from 'react-icons/md';
-import { IoMdMenu, IoIosLogOut } from 'react-icons/io';
+import { IoIosLogOut } from 'react-icons/io';
 import { GoHome } from 'react-icons/go';
 import { HiOutlineDocumentCurrencyDollar } from 'react-icons/hi2';
 import { LuHistory } from 'react-icons/lu';
@@ -21,10 +20,6 @@ export default function Sidebar() {
     navigate('/');
   };
 
-  const goToProfilePage = () => {
-    navigate('/profile');
-  };
-
   return (
     <header className={styles.sidebar}>
 
@@ -39,7 +34,7 @@ export default function Sidebar() {
           className={styles.profileImg}
         />
             <h2>Douglas Araujo</h2>
-            <p>Dev Front-end jr.</p>
+            <p>Dev.Full-Stack</p>
       </div>
 
        <div className={styles.iconContainer}>
@@ -58,7 +53,7 @@ export default function Sidebar() {
           <p className={styles.nameOption}>Análises</p>
         </button>
 
-        <button className={styles.buttonOption} onClick={goToProfilePage}>
+        <button className={styles.buttonOption}>
           <LuHistory className={styles.icon} />
           <p className={styles.nameOption}>Históricos</p>
         </button>

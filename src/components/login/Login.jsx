@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Login.module.scss';
 import imgDeFundo from '../../assets/wsbackground.png';
 import wsLogo from '../../assets/logo-ws.png';
+import styles from './Login.module.scss';
+
 
 export default function Login() {
   const navigate = useNavigate();
