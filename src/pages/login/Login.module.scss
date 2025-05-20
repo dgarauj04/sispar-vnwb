@@ -1,0 +1,208 @@
+main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.imageSection {
+  width: 70%;
+  background: url('../../assets/wsbackground.png') no-repeat center center;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  padding: 20px;
+  background-color: var(--background-color);
+
+  h1 {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    width: 80%;
+  }
+
+  p {
+    color: var(--third-color);
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.logo > img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.formLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+  width: 100%;
+}
+
+.fieldsetLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 17vh;
+  border: none;
+}
+
+.inputLogin {
+  border: 0.8px solid #cbd4e1;
+  background: rgb(233, 230, 230);
+  font-size: 16px;
+  font-weight: 400;
+  width: 85%;
+
+  &:hover {
+    border: 0.8px solid var(--first-color);
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 2px 4px #b3b3b3;
+    &:focus-visible {
+      outline: none;
+      border-color: var(--text-color);
+      border-width: 0.8px;
+    }
+  }
+}
+
+input.error {
+  border: 1px solid var(--error-color);
+}
+
+.esqueci {
+  color: var(--text-color);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.areaBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 65%;
+  height: 10vh;
+}
+
+.btnEntrar, .btnCreate {
+  width: 45%;
+  height: 7vh;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 17px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.btnEntrar {
+  background: var(--first-color);
+}
+
+.btnCreate {
+  background: var(--second-color);
+  &:hover {
+    background: var(--second-hover);
+  }
+}
+
+
+//reponse area
+@media (max-width: 868px) {
+  main {
+    height: auto;
+  }
+
+  .imageSection {
+   display: none;
+  }
+
+  .loginSection {
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    border: solid;
+    background:  linear-gradient(rgba(217, 216, 216, 0.69), rgba(255, 255, 255, 0.4)), url('../../assets/wsbackground.png') center/cover no-repeat;
+  }
+
+  h1 {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .formLogin {
+    height: 23vh;
+    width: 90%;
+  }
+
+  .areaBtn {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnEntrar,
+  .btnCreate {
+    width: 90%;
+    height: 6vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+.formLogin {
+    height: 40vh;
+  }
+  .fieldsetLogin {
+    height: 17vh;
+    gap: 10px;
+  }
+  .inputLogin {
+    width: 100%;
+    height: 7vh;
+  }
+
+  .areaBtn {
+    width: 100%;
+    height: 13vh;
+  }
+
+  .btnEntrar,
+  .btnCreate {
+    width: 100%;
+  }
+}
