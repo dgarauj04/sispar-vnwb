@@ -72,7 +72,7 @@ export default function Login() {
               <button
                 type="button"
                 className={styles.btnEntrar}
-                onClick={initLoginClick}
+                /*onClick={initLoginClick}*/
               >
                 Entrar
               </button>
