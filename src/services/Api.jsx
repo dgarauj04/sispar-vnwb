@@ -1,20 +1,19 @@
 import axios from 'axios'; 
 
+/*
 let baseURL;
 
 switch (location.hostname) {
   case 'localhost':
     baseURL = 'http://localhost:5000';
-    break;
- // case '192.168.0.102':
-  //  baseURL = 'http://192.168.0.102:8080/api';
-  //  break;
+    break; 
   default:
-    baseURL = 'http://localhost:5000';
+    baseURL = 'https://back-sispar.onrender.com';
 }
+*/
 
 const api = axios.create({
-  baseURL,
+  baseURL: 'https://back-sispar.onrender.com',
 });
 
 export default api;

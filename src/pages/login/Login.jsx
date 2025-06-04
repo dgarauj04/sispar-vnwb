@@ -10,22 +10,40 @@ export default function Login() {
 
   const [ email, setEmail ] = useState('');
   const [ senha, setSenha ] = useState('');
-
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  /*const initLoginClick = async () => {
-   try {
-    await api.post('/colaborador/login', {
-      email: email,
-      senha: senha,
-    });
+  const initLoginClick = async (e) => {
+    e.preventDefault();
+    setLoading(true);
     
-    navigate('/refund');
-   }
-   catch {
-    alert('Email ou senha incorretos');
-   } 
-  };*/
+    try {
+      const response = await api.post('/colaborador/login', {
+        email,
+        senha
+      });
+
+      if (response.status === 200) {
+        navigate('/refund');
+      }
+    } catch (error) {
+      let errorMessage = 'Erro ao realizar login';
+      
+      if (error.response) {
+        errorMessage = error.response.data.mensagem || errorMessage;
+        
+        if (error.response.status === 404) {
+          errorMessage = 'Usuário não encontrado';
+        } else if (error.response.status === 401) {
+          errorMessage = 'Credenciais inválidas';
+        }
+      }
+      
+      alert(errorMessage);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const initCreateAccountClick = () => {
     navigate('/create-account');
@@ -45,7 +63,7 @@ export default function Login() {
           <h1>Boas vindas ao Novo Portal SISPAR</h1>
           <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
-           <form className={styles.formLogin}>
+           <form className={styles.formLogin} onSubmit={initLoginClick}>
           <fieldset className={styles.fieldsetLogin}>
             <input
               type="email"
@@ -54,6 +72,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={loading}
             />
             <input
               type="password"
@@ -62,19 +81,21 @@ export default function Login() {
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
+              disabled={loading}
             />
              </fieldset>
+
             <a href="#" className={styles.esqueci}>
               Esqueci minha senha
             </a>
 
             <div className={styles.areaBtn}>
               <button
-                type="button"
+                type="submit"
                 className={styles.btnEntrar}
-                onClick={initLoginClick}
+                disabled={loading}
               >
-                Entrar
+               {loading ? 'Carregando...' : 'Entrar'}
               </button>
 
               <button 

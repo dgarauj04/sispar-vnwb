@@ -12,10 +12,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 26vh;
+    height: 25vh;
     width: 40vw;
     overflow: hidden;
-    transition: all 0.8s ease-in-out;
+    transition: min-height 0.9s ease;
     border-radius: 20px;
     background-color: #d2d8d7;
      &.open {
@@ -79,7 +79,7 @@ p {
     padding: 5px;
     background-color: transparent;
     opacity: 0;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.9s ease-in-out;
   
   &.open{
         display: flex;
