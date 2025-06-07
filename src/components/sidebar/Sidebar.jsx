@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import styles from './Sidebar.module.scss';
 import { MdMenuOpen, MdContentPasteSearch } from 'react-icons/md';
 import { IoIosLogOut } from 'react-icons/io';
@@ -9,6 +10,15 @@ import imgProfile from "../../assets/image.png"
 
 export default function Sidebar() {
   const navigate = useNavigate();
+  const [colaborador, setColaborador] = useState({ nome: '', cargo: '' }); 
+
+ useEffect(() => {
+  const colaboradorData = localStorage.getItem('colaborador');
+
+  if (colaboradorData) {
+    setColaborador(JSON.parse(colaboradorData));
+  }
+}, []);
 
   const goToRefundPage = () => {
     navigate('/refund');
@@ -17,6 +27,7 @@ export default function Sidebar() {
     navigate('/request');
   };
   const initLogout = () => {
+    localStorage.removeItem('colaborador');
     navigate('/');
   };
 
@@ -33,8 +44,8 @@ export default function Sidebar() {
           alt="Profile"
           className={styles.profileImg}
         />
-            <h2>Douglas Araujo</h2>
-            <p>Dev.Full-Stack</p>
+            <h2>{colaborador.nome || 'Colaborador'}</h2>
+            <p>{colaborador.cargo || 'Cargo'}</p>
       </div>
 
        <div className={styles.iconContainer}>

@@ -24,12 +24,20 @@ export default function Login() {
       });
 
       if (response.status === 200) {
-        navigate('/refund');
+         alert('Login realizado com sucesso!');
+  
+         const colaborador = response.data;
+         const { senha, ...dadosSemSenha } = colaborador;
+         localStorage.setItem('colaborador', JSON.stringify(dadosSemSenha));
+
+         navigate('/refund'); 
       }
     } catch (error) {
       let errorMessage = 'Erro ao realizar login';
-      
+
       if (error.response) {
+        console.error('Erro ao realizar login:', error);
+        console.log(error.response);
         errorMessage = error.response.data.mensagem || errorMessage;
         
         if (error.response.status === 404) {

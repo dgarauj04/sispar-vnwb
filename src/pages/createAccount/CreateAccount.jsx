@@ -9,6 +9,7 @@ import api from '../../services/Api.jsx';
 
 export default function CreateAccount() {
 const [efeito, setEfeito] = useState(false);
+const navigate = useNavigate();
 const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -51,10 +52,11 @@ const [loading, setLoading] = useState(false);
       if (response.status === 201) {
         alert('Conta criada com sucesso!');
         submitReset();
-        useNavigate('/login');
+        navigate('/');
       }
     } catch (error) {
       console.error('Erro ao cadastrar:', error);
+      console.log(error.response);
       alert(error.response?.data?.mensagem || 'Erro ao criar conta');
     } finally {
       setLoading(false);

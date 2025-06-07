@@ -211,3 +211,122 @@ label {
     background-color: #0e8074;
   }
 }
+
+@media (max-width: 1024px) {
+ // Form container responsivo
+.formContainer {
+  flex-direction: column;
+  height: auto;
+  gap: 10px;
+}
+  .firstInputs {
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 5px;
+  }
+
+  .secondInputs {
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 5px;
+  }
+
+  .separatorLine {
+     display: none;
+  }
+
+ 
+  .inputName, .inputEmpresa,
+  .inputDate, .selectDespesa
+   {
+    width: 47%;
+    height: 7vh;
+  }
+  .inputPrestacao {
+    width: 20%;
+    height: 7vh;
+  }
+
+  .inputDescricao, .selectControl {
+    width: 77%;
+    height: 7vh;
+  }
+
+  .inputOrd, .inputPep, .inputDiv, .inputMoeda,
+  .inputDist, .inputValorKm, .inputTaxa, .inputFaturado {
+    width: 25%;
+    height: 7vh;
+  }
+ 
+  .buttonContainer {
+    width: 45%;
+  }
+
+  .buttonSave {
+    width: 35%;
+    height: 4.2vh;
+  }
+
+  .buttonClean {
+    width: 25%;
+    height: 4.2vh;
+  }
+}
+
+// Telas até 768px
+@media (max-width: 768px) {
+  .inputName, .inputEmpresa {
+    width: 45%;
+    height: 7vh;
+  }
+  .inputPrestacao, .inputDate, .inputOrd, .inputPep, .inputDiv, .inputDist, .inputMoeda, .inputValorKm, .inputTaxa, .inputFaturado {
+    width: 27%;
+    height: 7vh;
+  }
+.inputDescricao, .selectControl {
+    width: 70%;
+     height: 7vh;
+  }
+  
+  .buttonContainer {
+    width: 60%;
+    align-items: center;
+  }
+
+  .buttonSave, .buttonClean {
+    width: 25%;
+  }
+}
+
+// Telas até 480px
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 10px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input, select {
+    height: 5.5vh;
+    font-size: 14px;
+  }
+
+  .inputIcon, .inputIconDespesa, .inputIconControle {
+    width: 40px;
+    height: 5.5vh;
+    padding: 10px;
+  }
+
+  .iconButton {
+    font-size: 16px;
+  }
+
+  .buttonSave, .buttonClean {
+    font-size: 14px;
+    height: 5.5vh;
+  }
+}

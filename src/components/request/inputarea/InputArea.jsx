@@ -313,6 +313,7 @@ export default function InputArea({ onAddReembolso }) {
                   value={formData.moeda}
                   onChange={handleChange}
                   placeholder='BRL'
+                  max={3}
                 />
               </div>
 

@@ -25,16 +25,18 @@
       color: var(--text-color);
       font-size: 16px;
       opacity: 0;
-      width: 120px;
+      width: 100%;
       transition: opacity 0.8s ease;
+      text-align: center;
     }
     p {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--third-color);
       opacity: 0;
       text-align: center;
-      width: 120px;
+      width: 100%;
       transition: opacity 0.8s ease;
+      text-align: center;
     }
   }
 
@@ -64,16 +66,19 @@
   .logoutBtn {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 5px;
     background: none;
     width: 100%;
 
     .nameOption {
-      opacity: 0;
-      font-size: 16px;
-      color: var(--text-color);
-      transition: opacity 0.4s ease;
-    }
+    max-width: 0;
+    opacity: 0; 
+    font-size: 16px;
+    color: var(--text-color);
+    overflow: hidden; 
+    white-space: nowrap; 
+    transition: max-width 0.8s ease-in-out, opacity 0.8s ease-in-out; 
+  }
 
     .icon {
       width: 40px;
@@ -91,10 +96,11 @@
     }
   }
 
- &:hover .buttonOption .nameOption, 
-  &:hover .logoutBtn .nameOption {
-    opacity: 1;
-  }
+ &:hover .buttonOption .nameOption,
+&:hover .logoutBtn:hover .nameOption {
+  max-width: 100%; 
+  opacity: 1;
+}
 
   .logoutBtn {
     display: flex;
