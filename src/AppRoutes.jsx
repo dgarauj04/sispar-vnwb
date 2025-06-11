@@ -5,7 +5,7 @@ import Login from './pages/login/Login';
 import CreateAccount from './pages/createAccount/CreateAccount';
 import PageRequest from './pages/pageRequest/PageRequest';
 import PageRefund from './pages/pageRefund/PageRefund';
-import PageAnalysis from './pages/pageAnalysis/pageAnalysis';
+import PageAnalysis from './pages/pageAnalysis/PageAnalysis';
 
 export default function AppRoutes() {
   return (
