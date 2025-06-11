@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import imgDeFundo from '../../assets/wsbackground.png';
 import wsLogo from '../../assets/logo-ws.png';
 import styles from './Login.module.scss';
@@ -24,11 +25,12 @@ export default function Login() {
       });
 
       if (response.status === 200) {
-         alert('Login realizado com sucesso!');
-  
          const colaborador = response.data;
          const { senha, ...dadosSemSenha } = colaborador;
          localStorage.setItem('colaborador', JSON.stringify(dadosSemSenha));
+
+         toast.success('Login realizado com sucesso!', { autoClose: 3000,
+          position: 'top-center'});
 
          navigate('/refund'); 
       }
@@ -43,11 +45,13 @@ export default function Login() {
         if (error.response.status === 404) {
           errorMessage = 'Usuário não encontrado';
         } else if (error.response.status === 401) {
-          errorMessage = 'Credenciais inválidas';
+          errorMessage = 'Email ou senha inválidos';
         }
       }
       
-      alert(errorMessage);
+      toast.error(errorMessage, { autoClose: 4000,
+        position: 'top-center'
+       });
     } finally {
       setLoading(false);
     }

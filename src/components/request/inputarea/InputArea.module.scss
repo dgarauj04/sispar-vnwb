@@ -60,6 +60,7 @@ label {
   justify-content: space-between;
   flex-direction: column;
 }
+
 .inputPrestacao {
   width: 27%;
   height: 9vh;
@@ -195,6 +196,8 @@ label {
   height: 6vh;
   border-radius: 6px;
   font-size: 16px;
+  cursor: pointer;
+
   &:hover {
     background-color: #1a2e66;
   }
@@ -207,6 +210,8 @@ label {
   border-radius: 6px;
   font-size: 16px;
   color: #fff;
+  cursor: pointer;
+  
   &:hover {
     background-color: #0e8074;
   }
@@ -216,7 +221,7 @@ label {
  // Form container responsivo
 .formContainer {
   flex-direction: column;
-  height: auto;
+  height: 60vh;
   gap: 10px;
 }
   .firstInputs {
@@ -237,27 +242,26 @@ label {
      display: none;
   }
 
- 
   .inputName, .inputEmpresa,
   .inputDate, .selectDespesa
    {
     width: 47%;
-    height: 7vh;
+    height: 8vh;
   }
   .inputPrestacao {
     width: 20%;
-    height: 7vh;
+    height: 8vh;
   }
 
   .inputDescricao, .selectControl {
     width: 77%;
-    height: 7vh;
+    height: 8vh;
   }
 
   .inputOrd, .inputPep, .inputDiv, .inputMoeda,
   .inputDist, .inputValorKm, .inputTaxa, .inputFaturado {
     width: 25%;
-    height: 7vh;
+    height: 7.7vh;
   }
  
   .buttonContainer {
@@ -266,28 +270,29 @@ label {
 
   .buttonSave {
     width: 35%;
-    height: 4.2vh;
+    height: 5.2vh;
   }
 
   .buttonClean {
     width: 25%;
-    height: 4.2vh;
+    height: 5.2vh;
   }
 }
 
 // Telas até 768px
 @media (max-width: 768px) {
+  .formContainer {
+    height: auto;
+  }
+
   .inputName, .inputEmpresa {
     width: 45%;
-    height: 7vh;
   }
   .inputPrestacao, .inputDate, .inputOrd, .inputPep, .inputDiv, .inputDist, .inputMoeda, .inputValorKm, .inputTaxa, .inputFaturado {
     width: 27%;
-    height: 7vh;
   }
 .inputDescricao, .selectControl {
     width: 70%;
-     height: 7vh;
   }
   
   .buttonContainer {
@@ -302,23 +307,27 @@ label {
 
 // Telas até 480px
 @media (max-width: 480px) {
-  .formContainer {
-    padding: 10px;
-  }
 
   label {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   input, select {
-    height: 5.5vh;
     font-size: 14px;
   }
 
-  .inputIcon, .inputIconDespesa, .inputIconControle {
-    width: 40px;
-    height: 5.5vh;
-    padding: 10px;
+  .inputName, .inputEmpresa, .inputDescricao, .selectControl, .selectDespesa, .inputPrestacao, .inputDate {
+    width: 100%;
+  }
+  
+   .inputOrd, .inputPep, .inputDiv, .inputDist, .inputMoeda, .inputValorKm, .inputTaxa, .inputFaturado {
+    width: 30%;
+  }
+  
+  .buttonContainer {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .iconButton {
@@ -327,6 +336,7 @@ label {
 
   .buttonSave, .buttonClean {
     font-size: 14px;
-    height: 5.5vh;
+    width: 40%;
+    height: 6vh;
   }
 }

@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
   padding: 10px;
   width: 100%;
   height: 100vh;
@@ -20,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 9%;
+  width: 10%;
   font-size: 0.875rem;
   color: var(--fourth-color);
 }
@@ -112,12 +113,12 @@
   height: 20%;
   border-radius: 6px;
   border: 0.8px solid #cbd4e1;
-  padding: 20px;
+  padding: 10px;
 
   .infoItem {
     display: flex;
     align-items: center;
-    width: 20%;
+    width: 22%;
     height: 6vh;
     justify-content: space-evenly;
     color: var(--text-color);
@@ -154,7 +155,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 17%;
+  min-width: 17%;
+  max-width: 20%;
   flex-direction: row;
   font-weight: 400;
   font-size: 1rem;
@@ -163,6 +165,29 @@
 
 
 //response area
+@media (max-width: 1024px) {
+  .navarea {
+    min-width: 13vw;
+    max-width: 50%;
+  }
+
+  .sectionContent{
+    width: 90%;
+  }
+  .infoContainer {
+    width: 100%;
+  }
+  .infoContainer .infoItem {
+    width: 25%;
+  .infoIcon {
+    width: 30%;
+  }
+}
+
+  .updateText { 
+    max-width: 35%;
+  }
+}
 @media (max-width: 868px) {
   .content {
     margin-left: 5rem;
@@ -172,7 +197,8 @@
   }
 
   .navarea {
-    width: 18%; 
+    min-width: 17vw;
+    max-width: 30vw; 
     font-size: 0.85rem; 
   }
 
@@ -214,12 +240,16 @@
     padding: 30px;
 
     .infoItem {
-      width: 35%; 
+      min-width: 38%;
+      max-width: 66%; 
       justify-content: space-evenly; 
       margin-bottom: 1rem; 
       font-size: 1.2rem;
+      h3 {
+        font-size: 1.2rem;
+      }
        p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
        }
       .infoIcon {
         width: 26%;
@@ -227,12 +257,16 @@
     }
   }
 .updateText {
-    width: 100%;
+    max-width: 100%;
    justify-content: center;
    font-size: 1.2rem;
+   gap: 15px;
   }
 }
 @media (max-width: 480px) {
+  .navarea {
+    width: 27vw;
+  }
   .content {
     margin-left: 3.5rem;
   }
@@ -261,12 +295,14 @@
     height: 18vh;
     .infoItem { 
       width: 50%;
-      font-size: 0.8rem;
+      h3 {
+        font-size: 0.9rem;
+      }
        p {
-        font-size: 1rem;
+        font-size: 0.9rem;
        }
       .infoIcon {
-        width: 24%;
+        width: 23%;
       }
     }
   }

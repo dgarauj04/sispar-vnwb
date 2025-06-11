@@ -9,6 +9,7 @@
   padding: 0 8px;
   width: 5%;
   transition: 1.2s all ease;
+  z-index: 100;
 
   &:hover {
     width: 13%;
@@ -96,8 +97,8 @@
     }
   }
 
- &:hover .buttonOption .nameOption,
-&:hover .logoutBtn:hover .nameOption {
+&:hover .buttonOption .nameOption,
+&:hover .logoutBtn .nameOption {
   max-width: 100%; 
   opacity: 1;
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
-import wsLogo from '../../assets/logo-ws.png'
-import styles from './CreateAccount.module.scss'
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import wsLogo from '../../assets/logo-ws.png';
+import styles from './CreateAccount.module.scss';
 import { MdEmail, MdWork } from "react-icons/md";
 import { IoMdLock, IoLogoUsd } from "react-icons/io";
 import { HiIdentification, HiUser } from "react-icons/hi2";
@@ -50,14 +51,14 @@ const [loading, setLoading] = useState(false);
       });
 
       if (response.status === 201) {
-        alert('Conta criada com sucesso!');
+        toast.success('Conta criada com sucesso!', { autoClose: 3000, position: 'top-center' });
         submitReset();
         navigate('/');
       }
     } catch (error) {
       console.error('Erro ao cadastrar:', error);
       console.log(error.response);
-      alert(error.response?.data?.mensagem || 'Erro ao criar conta');
+      toast.error(error.response?.data?.mensagem || 'Erro ao criar conta', { autoClose: 4000, position: 'top-center' });
     } finally {
       setLoading(false);
     }

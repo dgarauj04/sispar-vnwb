@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './InformArea.module.scss';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+import { RiDeleteBin6Line, RiCloseCircleFill } from 'react-icons/ri';
 import { BiSolidFile } from 'react-icons/bi';
 import MessageDelete from './messageDelete/MessageDelete';
+
 
 export default function InformArea({ 
   reembolsos, 
@@ -19,9 +21,18 @@ export default function InformArea({
   onCancel: PropTypes.func.isRequired,
 }; 
 
+const [motivoAtivo, setMotivoAtivo] = useState(null);
+  const openMotivo = (motivo) => {
+    setMotivoAtivo(motivo);
+  };
+  const closeMotivo = () => {
+    setMotivoAtivo(null);
+  };
+
   const deleteClick = (id) => {
     onRemoveReembolso(id);
   };
+  
 
   return (
     <>
@@ -64,19 +75,21 @@ export default function InformArea({
                   </button>
                 </td>
                 <td className={styles.Element}>{reembolso.colaborador}</td>
-                <td className={styles.Element}>{reembolso.empresa}</td>
+                <td className={styles.Element} style={{ textTransform: 'uppercase'}}>{reembolso.empresa}</td>
                 <td className={styles.Element}>{reembolso.prestacaoContas}</td>
                 <td className={styles.Element}>{reembolso.data}</td>
                 <td className={styles.ElementText}>
-                  <BiSolidFile className={styles.iconText} aria-hidden="true" />
+                  <button className={styles.openMotivoBtn} onClick={() => openMotivo(reembolso.motivo)} aria-label='Ver Motivo'>
+                    <BiSolidFile className={styles.iconText}/>
+                  </button>
                 </td>
                 <td className={styles.Element}>{reembolso.tipoReembolso}</td>
                 <td className={styles.Element}>{reembolso.controleCusto}</td>
                 <td className={styles.Element}>{reembolso.ordInt}</td>
                 <td className={styles.Element}>{reembolso.div}</td>
                 <td className={styles.Element}>{reembolso.pep}</td>
-                <td className={styles.Element}>{reembolso.moeda}</td>
-                <td className={styles.Element}>{reembolso.distKm}</td>
+                <td className={styles.Element} style={{ textTransform: 'uppercase'}}>{reembolso.moeda}</td>
+                <td className={styles.Element}>{reembolso.distKm}Km</td>
                 <td className={styles.Element}>{reembolso.valorKm}</td>
                 <td className={styles.Element}>{reembolso.valorFaturado}</td>
                 <td className={styles.Element}>{reembolso.despesa}</td>
@@ -85,6 +98,20 @@ export default function InformArea({
           </tbody>
         </table>
       </section>
+
+       {motivoAtivo && (
+        <section className={styles.motivoAtivo}>
+          <div className={styles.motivoButton}> 
+            <button className={styles.closeMotivoBtn} onClick={closeMotivo}>
+              <RiCloseCircleFill />
+            </button>
+          </div>
+
+          <div className={styles.motivoContent}>
+          <p>{motivoAtivo}</p>
+        </div>
+        </section>
+      )}
 
       {deleteMessage && (
         <MessageDelete

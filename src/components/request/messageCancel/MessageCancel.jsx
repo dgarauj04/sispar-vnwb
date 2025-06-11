@@ -1,6 +1,7 @@
 import styles from './MessageCancel.module.scss'
 
 export default function MessageCancel({ onConfirm, onCancel }) {
+ 
   return(
     <section className={styles.messageArea}>
       <div className={styles.areaContainer}>

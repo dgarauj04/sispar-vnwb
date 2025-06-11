@@ -80,7 +80,7 @@ export default function InputArea({ onAddReembolso }) {
   const handleReset = () => {
     setShowResetMessage(true);
   };
-  const handleConfirmReset = () => {
+  const confirmReset = () => {
     setFormData({
       nome: '',
       empresa: '',
@@ -101,7 +101,7 @@ export default function InputArea({ onAddReembolso }) {
     setShowResetMessage(false);
   };
 
-  const handleCancelReset = () => {
+  const cancelReset = () => {
     setShowResetMessage(false);
   };
 
@@ -117,6 +117,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="text"
                   id="nome"
                   name="nome"
+                  required
                   value={formData.nome}
                   onChange={handleChange}
                 />
@@ -130,8 +131,10 @@ export default function InputArea({ onAddReembolso }) {
                   type="text"
                   id="empresa"
                   name="empresa"
+                  required
                   value={formData.empresa}
                   onChange={handleChange}
+                  style={{ textTransform: 'uppercase'}}
                 />
               </div>
 
@@ -143,6 +146,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="prestacaoContas"
                   name="prestacaoContas"
+                  required
                   value={formData.prestacaoContas}
                   onChange={handleChange}
                 />
@@ -156,6 +160,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="text"
                   id="descricao"
                   name="descricao"
+                  required
                   value={formData.descricao}
                   onChange={handleChange}
                 ></input>
@@ -174,6 +179,7 @@ export default function InputArea({ onAddReembolso }) {
                     type="date"
                     id="data"
                     name="data"
+                    required
                     value={formData.data}
                     onChange={handleChange}
                   />
@@ -191,21 +197,22 @@ export default function InputArea({ onAddReembolso }) {
                   <select
                     id="tipoDespesa"
                     name="tipoDespesa"
+                    required
                     value={formData.tipoDespesa}
                     onChange={handleChange}
                   >
                     <option value="" disabled>
                       Selecionar
                     </option>
-                    <option value="alimentacao">Alimentação</option>
-                    <option value="combustivel">Combustível</option>
-                    <option value="conducao">Condução</option>
-                    <option value="estacionamento">Estacionamento</option>
-                    <option value="viagemAdmin">Viagem admin.</option>
-                    <option value="viagemOperacional">
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Combustível">Combustível</option>
+                    <option value="Condução">Condução</option>
+                    <option value="Estacionamento">Estacionamento</option>
+                    <option value="Viagem Admin.">Viagem Admin.</option>
+                    <option value="Viagem Operacional">
                       Viagem operacional
                     </option>
-                    <option value="eventosRepresentacao">
+                    <option value="Eventos de Representação">
                       Eventos de representação
                     </option>
                   </select>
@@ -223,6 +230,7 @@ export default function InputArea({ onAddReembolso }) {
                   <select
                     id="controleCusto"
                     name="controleCusto"
+                    required
                     value={formData.controleCusto}
                     onChange={handleChange}
                   >
@@ -254,6 +262,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="ordInt"
                   name="ordInt"
                   placeholder='0000'
+                  required
                   value={formData.ordInt}
                   onChange={handleChange}
                 />
@@ -268,6 +277,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="pep"
                   name="pep"
                   placeholder='000'
+                  required
                   value={formData.pep}
                   onChange={handleChange}
                 />
@@ -282,6 +292,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="div"
                   name="div"
                   placeholder='000'
+                  required
                   value={formData.div}
                   onChange={handleChange}
                   className={styles.inputDiv}
@@ -296,6 +307,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="number"
                   id="distKm"
                   name="distKm"
+                  required
                   value={formData.distKm}
                   onChange={handleChange}
                   placeholder="0Km"
@@ -310,6 +322,7 @@ export default function InputArea({ onAddReembolso }) {
                   type="text"
                   id="moeda"
                   name="moeda"
+                  required
                   value={formData.moeda}
                   onChange={handleChange}
                   placeholder='BRL'
@@ -326,6 +339,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="valorKm"
                   name="valorKm"
                   placeholder='$0.00'
+                  required
                   value={formData.valorKm}
                   onChange={handleChange}
                 />
@@ -340,6 +354,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="valTaxa"
                   name="valTaxa"
                   placeholder='0.0%'
+                  required
                   value={formData.valTaxa}
                   onChange={handleChange}
                 />
@@ -354,6 +369,7 @@ export default function InputArea({ onAddReembolso }) {
                   id="valFaturado"
                   name="valFaturado"
                   placeholder='$0.00'
+                  required
                   value={formData.valFaturado}
                   onChange={handleChange}
                 />
@@ -381,8 +397,8 @@ export default function InputArea({ onAddReembolso }) {
 
       {showResetMessage && (
         <MessageForm
-          onConfirm={handleConfirmReset}
-          onCancel={handleCancelReset}
+          onConfirm={confirmReset}
+          onCancel={cancelReset}
         />
       )}
     </>

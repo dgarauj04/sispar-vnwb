@@ -26,6 +26,11 @@ export default function Sidebar() {
   const goToRequestPage = () => {
     navigate('/request');
   };
+
+  const goToAnalysisPage = () => {
+    navigate('/analysis');
+  };
+
   const initLogout = () => {
     localStorage.removeItem('colaborador');
     navigate('/');
@@ -59,7 +64,7 @@ export default function Sidebar() {
           <p className={styles.nameOption}>Reembolsos</p>
         </button>
 
-        <button className={styles.buttonOption}>
+        <button className={styles.buttonOption} onClick={goToAnalysisPage}>
           <MdContentPasteSearch className={styles.icon} />
           <p className={styles.nameOption}>Análises</p>
         </button>

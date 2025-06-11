@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import styles from './Request.module.scss';
 import InputArea from './inputarea/InputArea';
 import InformArea from './informarea/InformArea';
@@ -12,7 +13,9 @@ export default function Request() {
   const [deleteMessage, setDeleteMessage] = useState(false);
   const [reembolsoToDelete, setReembolsoToDelete] = useState(null);
   const [showCancelMessage, setShowCancelMessage] = useState(false);
-
+  const [totalFaturado, setTotalFaturado] = useState(0);
+  const [totalDespesa, setTotalDespesa] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const handleAddReembolso = (novoReembolso) => {
     setReembolsos([...reembolsos, novoReembolso]);
@@ -37,12 +40,80 @@ export default function Request() {
   };
 
   const actionConfirmCancel = () => {
+    setReembolsos([]);
     setShowCancelMessage(false);
   };
 
   const actionCancelCancel = () => {
     setShowCancelMessage(false);
   };
+
+  useEffect(() => {
+  const totalFaturadoCalc = reembolsos.reduce((acc, item) => {
+    const valor = parseFloat(item.valorFaturado) || 0;
+    return acc + valor;
+  }, 0);
+
+  const totalDespesaCalc = reembolsos.reduce((acc, item) => {
+    const valor = parseFloat(item.despesa) || 0;
+    return acc + valor;
+  }, 0);
+
+  setTotalFaturado(totalFaturadoCalc);
+  setTotalDespesa(totalDespesaCalc);
+}, [reembolsos]);
+
+const submitRequest = async () => {
+  setLoading(true);
+
+  if (reembolsos.length === 0) {
+    toast.warn("Adicione pelo menos um reembolso antes de enviar.", { autoClose: 4000, position: "top-center" });
+    return;
+  }
+
+  try {
+    for (const reembolso of reembolsos) {
+      const response = await fetch('https://back-sispar.onrender.com/refunds/new', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          colaborador: reembolso.colaborador,
+          empresa: reembolso.empresa,
+          nPrestacao: reembolso.prestacaoContas,
+          descricao: reembolso.motivo,
+          data: reembolso.data,
+          tipoReembolso: reembolso.tipoReembolso,
+          centroCusto: reembolso.controleCusto,
+          ordemInterna: reembolso.ordInt,
+          divisao: reembolso.div,
+          pep: reembolso.pep,
+          moeda: reembolso.moeda,
+          distanciaKm: reembolso.distKm,
+          valorKm: reembolso.valorKm,
+          valorFaturado: reembolso.valorFaturado,
+          despesa: reembolso.despesa,
+          status: 'Em analise'
+        })
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        console.error(data);
+        toast.error("Erro ao enviar reembolso!", { autoClose: 4000, position: "top-center" });
+        return;
+      }
+    }
+   
+    toast.success("Reembolsos enviados com sucesso!", { autoClose: 3000, position: "top-center" });
+   setReembolsos([]);
+   setLoading(false);
+  } catch (error) {
+    console.error(error);
+    toast.error("Erro ao conectar com o servidor.", { autoClose: 4000, position: "top-center" });
+  }
+};
 
   return (
     <>
@@ -68,19 +139,19 @@ export default function Request() {
           <InformArea
             reembolsos={reembolsos}
             onRemoveReembolso={handleRemoveReembolso}
-            deleteMessage={deleteMessage}
+            deleteMessage={false}
             onConfirm={clickConfirmDelete}
             onCancel={clickCancelDelete}
           />
         </main>
 
         <footer className={styles.footerContainer}>
- <div className={styles.inputFooter}>
+        <div className={styles.inputFooter}>
           <div className={styles.inputTotal}>
             <label className={styles.labelTotal}>Total Faturado</label>
             <input
               type="text"
-              value="0.00"
+              value={totalFaturado.toFixed(2)}
               readOnly
             />
           </div>
@@ -89,14 +160,14 @@ export default function Request() {
             <label className={styles.labelTotal}>Total Despesa</label>
             <input
               type="text"
-              value="0.00"
+              value={totalDespesa.toFixed(2)}
               readOnly
             />
           </div>
 
          <div className={styles.areabtn}>
-            <button className={styles.sendButton}>
-              <MdCheck className={styles.iconButton} /> Enviar para Análise
+            <button className={styles.sendButton} type='submit' onClick={submitRequest} disabled={loading}>
+              <MdCheck className={styles.iconButton} /> {loading ? 'Enviando...' : 'Enviar para Análise'}
             </button>
             <button
               className={styles.cancelButton}

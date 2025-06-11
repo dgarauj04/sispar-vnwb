@@ -17,6 +17,10 @@ export default function Refund() {
     navigate('/request');
   };
 
+   const goToAnalysisPage = () => {
+    navigate('/analysis');
+  };
+
   return (
     <>
       <div className={styles.content}>
@@ -46,7 +50,7 @@ export default function Refund() {
                 <h2>Solicitar Reembolso</h2>
               </button>
 
-              <button className={styles.card}>
+              <button className={styles.card} onClick={goToAnalysisPage}>
                 <IoIosList className={styles.cardIcon} />
                 <h2>Verificar Análise</h2>
               </button>
