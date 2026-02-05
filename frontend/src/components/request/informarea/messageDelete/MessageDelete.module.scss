@@ -1,0 +1,90 @@
+.messageArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: #00000033;
+}
+
+.areaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  width: 55%;
+  height: 25%;
+  border-radius: 6px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px #0a0f1e29;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.areaBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  button {
+    height: 50px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+
+.continue {
+  width: 50%;
+  background-color: var(--first-color);
+}
+
+.limpar {
+  width: 40%;
+  background-color: var(--second-color);
+}
+
+@media (max-width: 1024px) {
+  .areaContainer {
+    width: 65%;
+    height: 22%;
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+  .areaBtns {
+    width: 100%;
+    height: 40%;
+    .continue, .limpar{
+      width: 43%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+ .areaContainer {
+    width: 80%;
+    height: 35%;
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+  .areaBtns {
+    flex-direction: column;
+    width: 100%;
+    height: 52%;
+    .continue, .limpar{
+      width: 100%;
+      height: 43px;
+    }
+  }
+}

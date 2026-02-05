@@ -1,0 +1,310 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  margin-left: 4.3rem;
+}
+
+.headerNav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.navarea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+  font-size: 0.875rem;
+  color: var(--fourth-color);
+}
+
+.linkIcon {
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.link,
+.linkIcon {
+  text-decoration: none;
+  color: var(--border-color);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.refoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 78%;
+  height: 70vh;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.cardsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .card {
+    width: 30%;
+    height: 33vh;
+    border-radius: 6px;
+    border: 0.8px solid var(--border-select);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--border-off);
+      border-right: 3px solid var(--border-select);
+      border-bottom: 3px solid var(--border-select);
+    }
+
+    .cardIcon {
+      font-size: 32px;
+      width: 30%;
+      height: 7vh;
+      margin-bottom: 16px;
+      color: var(--text-color);
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text-color);
+    }
+  }
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+  border-radius: 6px;
+  border: 0.8px solid #cbd4e1;
+  padding: 10px;
+
+  .infoItem {
+    display: flex;
+    align-items: center;
+    width: 22%;
+    height: 6vh;
+    justify-content: space-evenly;
+    color: var(--text-color);
+    font-size: 16px;
+    .infoIcon {
+      width: 25%;
+      height: 6vh;
+      border-radius: 6px;
+      text-align: center;
+      margin-right: 8px;
+      padding: 6px;
+      color: var(--border-off);
+    }
+
+    .iconSolic {
+      background-color: var(--second-color);
+    }
+
+    .iconAnalit {
+      background-color: var(--analise-color);
+    }
+
+    .iconAprove {
+      background-color: var(--sucess-color);
+    }
+
+    .iconReject {
+      background-color: var(--error-color);
+    }
+  }
+}
+
+.updateText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 17%;
+  max-width: 20%;
+  flex-direction: row;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--third-color);
+}
+
+
+//response area
+@media (max-width: 1024px) {
+  .navarea {
+    min-width: 13vw;
+    max-width: 50%;
+  }
+
+  .sectionContent{
+    width: 90%;
+  }
+  .infoContainer {
+    width: 100%;
+  }
+  .infoContainer .infoItem {
+    width: 25%;
+  .infoIcon {
+    width: 30%;
+  }
+}
+
+  .updateText { 
+    max-width: 35%;
+  }
+}
+@media (max-width: 868px) {
+  .content {
+    margin-left: 5rem;
+    padding: 10px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .navarea {
+    min-width: 17vw;
+    max-width: 30vw; 
+    font-size: 0.85rem; 
+  }
+
+  .sectionContent {
+    width: 100%; 
+    height: 93vh; 
+    justify-content: space-between;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .subtitle { 
+    font-size: 1.3rem;
+    text-align: center; 
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    
+    .card {
+      width: 70% ; 
+      height: auto; 
+      padding: 20px; 
+      margin-bottom: 1rem;
+
+      .cardIcon {
+        height: 6vh; 
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .infoContainer {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 30px;
+
+    .infoItem {
+      min-width: 38%;
+      max-width: 66%; 
+      justify-content: space-evenly; 
+      margin-bottom: 1rem; 
+      font-size: 1.2rem;
+      h3 {
+        font-size: 1.2rem;
+      }
+       p {
+        font-size: 1.2rem;
+       }
+      .infoIcon {
+        width: 26%;
+      }
+    }
+  }
+.updateText {
+    max-width: 100%;
+   justify-content: center;
+   font-size: 1.2rem;
+   gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .navarea {
+    width: 27vw;
+  }
+  .content {
+    margin-left: 3.5rem;
+  }
+  .title {
+    font-size: 1.2rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+  }
+  .cardsContainer {
+    .card {
+      width: 50%;
+      height: auto;
+      padding: 15px;
+      .cardIcon {
+        height: 5vh;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+     .infoContainer {
+    padding: 10px;
+    height: 18vh;
+    .infoItem { 
+      width: 50%;
+      h3 {
+        font-size: 0.9rem;
+      }
+       p {
+        font-size: 0.9rem;
+       }
+      .infoIcon {
+        width: 23%;
+      }
+    }
+  }
+  
+}

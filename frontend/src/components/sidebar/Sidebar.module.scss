@@ -1,0 +1,188 @@
+.sidebar {
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  position: fixed;
+  height: 100vh;
+  padding: 0 8px;
+  width: 5%;
+  transition: 1.2s all ease;
+  z-index: 100;
+
+  &:hover {
+    width: 13%;
+    background: var(--background-color);
+    box-shadow: 2px 0px 10px 1px #c9c5c5;
+  }
+
+  .perfil {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    h2 {
+      color: var(--text-color);
+      font-size: 16px;
+      opacity: 0;
+      width: 100%;
+      transition: opacity 0.8s ease;
+      text-align: center;
+    }
+    p {
+      font-size: 13px;
+      color: var(--third-color);
+      opacity: 0;
+      text-align: center;
+      width: 100%;
+      transition: opacity 0.8s ease;
+      text-align: center;
+    }
+  }
+
+  &:hover .perfil {
+    h2,
+    p {
+      opacity: 1;
+    }
+  }
+
+  .profileImg {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 33vh;
+  }
+
+  .buttonOption,
+  .logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    width: 100%;
+
+    .nameOption {
+    max-width: 0;
+    opacity: 0; 
+    font-size: 16px;
+    color: var(--text-color);
+    overflow: hidden; 
+    white-space: nowrap; 
+    transition: max-width 0.8s ease-in-out, opacity 0.8s ease-in-out; 
+  }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+      color: #fff;
+      background-color: var(--third-color);
+      font-size: 24px;
+
+      &:hover {
+        background-color: var(--second-hover);
+      }
+    }
+  }
+
+&:hover .buttonOption .nameOption,
+&:hover .logoutBtn .nameOption {
+  max-width: 100%; 
+  opacity: 1;
+}
+
+  .logoutBtn {
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100px;
+    
+    .iconLogout {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+      color: #fff;
+      background-color: var(--fourth-color);
+
+      &:hover {
+        background-color: var(--text-color);
+      }
+    }
+  }
+}
+
+
+//responsive area 
+@media (max-width: 992px) {
+  .sidebar {
+    width: 8%; 
+    
+    &:hover {
+      width: 30%; 
+    }
+
+    .profileImg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .icon {
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 10%;
+    padding: 0 5px;
+
+    &:hover {
+      width: 40%;
+      z-index: 1000;
+    }
+
+    .perfil h2,
+    .perfil p {
+      font-size: 16px; 
+    }
+
+    .buttonOption, 
+    .logoutBtn {
+      gap: 5px;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 15%;
+    padding: 0 5px;
+
+    &:hover {
+      width: 50%;
+      z-index: 1000;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.overflowXAuto {
+  overflow-y: auto;
+  width: 100%;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--border-select);
+  border-right: 1px solid var(--border-select);
+  border-left: 1px solid var(--border-select);
+  height: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+.table {
+  background-color: var(--border-select);
+  width: 100%;
+  border-radius: 5px;
+  border-spacing: 2px;
+}
+
+.headerRow {
+  background-color: var(--border-off);
+}
+
+tr {
+  background-color: var(--background-color);
+}
+
+.headerElement,
+.Element {
+  padding: 5px 8px;
+  text-align: start;
+}
+
+.ElementButton,
+.ElementText {
+  text-align: center;
+}
+
+.deleteButton {
+  width: 100%;
+  height: 10vh;
+  border-radius: 2px;
+  padding: 10px;
+  background: transparent;
+  color: var(--fourth-color);
+  &:hover {
+    background-color: var(--error-color);
+    color: var(--background-color); 
+  }
+  .iconDelete {
+  font-size: 22px;
+}
+}
+
+.ElementText {
+  .openMotivoBtn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    height: 10vh;
+  color: var(--fourth-color);
+    &:hover {
+      background-color: var(--text-color);
+      color: var(--background-color); 
+    }
+    .iconText {
+  transform: rotate(180deg) scaleX(-1);
+  font-size: 24px;
+}
+  }
+}
+
+.motivoAtivo {
+  background-color: rgba(0, 0, 0, 0.121);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 94.5vw;
+  height: 96vh;
+  color: var(--background-color);
+  position: fixed;
+  z-index: 100;
+  .motivoButton {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0 10px;
+    background: blue;
+    border-radius: 10px 10px 0 0;
+    width: 50%;
+    height: 10%;
+    .closeMotivoBtn {
+      background-color: transparent;
+      color: var(--border-select);
+      font-size: 3rem;
+      width: 10%;
+      height: 70%;
+      &:hover {
+        color: var(--background-color);
+      }
+    }
+  }
+  
+  .motivoContent {
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 4px 0px #0a0f1e29;
+    width: 50%;
+    height: 55%;
+    p {
+      color: var(--text-color);
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .overflowXAuto {
+    margin-top: 1rem;
+  }
+}

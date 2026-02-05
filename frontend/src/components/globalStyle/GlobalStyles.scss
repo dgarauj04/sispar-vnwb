@@ -1,0 +1,56 @@
+/* global.scss */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', serif;
+}
+
+:root {
+  --first-color: #001a3d;
+  --second-color: #00bedd;
+  --second-hover: #038ca3;
+  --third-color: #0844c4;
+  --fourth-color: #63758d;
+  --background-color: #f9f9f9;
+  --text-color: #23282f;
+  --error-color: #a60b2f;
+  --border-off: #f1f4f9;
+  --border-select: #cbd4e1;
+  --sucess-color: #007a6a;
+  --analise-color: #e56700;
+  --font-stack: 'Inter', serif;
+}
+
+html,
+body {
+   width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font-stack);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+input {
+  height: 45px;
+  padding: 12px 13px;
+  border-radius: 6px;
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+}
+
+li {
+  list-style: none;
+}
